@@ -1,0 +1,63 @@
+.bien{
+	background-color: #8BC34A
+}
+.bien>h4{
+	color: #212121
+}
+.bien>p{
+	color: #DCEDC8
+}
+.bien:hover{
+	background-color: #689F38;
+	text-decoration:none; 
+}
+
+.regular{
+	background-color: #FFEB3B
+}
+.regular>h4{
+	color: #212121
+}
+.regular>p{
+	color: #757575
+}
+.regular:hover{
+	background-color: #FBC02D;
+	text-decoration:none; 
+}
+
+.mal{
+	background-color: #F44336
+}
+.mal>h4{
+	color: #FFFFFF
+}
+.mal>p{
+	color: #FFCDD2
+}
+.mal:hover{
+	background-color: #D32F2F;
+}
+
+a.noSubrayado:hover {
+	text-decoration:none
+}
+
+.addCard{
+	background-color: #009688
+}
+.addCard>h1{
+	color: #FFFFFF;
+}
+.addCard:hover{
+	background-color: #00796B;
+	color: #B2DFDB
+}
+
+.md-36{
+	font-size: 36px
+}
+
+.grow >div>h1>i{ transition: all .2s ease-in-out; }
+.grow:hover >div>h1>i{ transform: scale(2); }
+
