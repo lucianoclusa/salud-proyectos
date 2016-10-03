@@ -1,8 +1,19 @@
-<div class="container" > 
+<div class="container-fluid blueBackground"> 
 	<div class="col-md-4" *ngFor="let proy of proys">
-		<div class="card card-block" >
-			<h4 class="card-title">{{proy}}</h4>
-			<p class="card-subtitle">Frente te atencion</p>
-		</div>
+		<a class="noSubrayado" href="#">
+			<div class="card card-block" [ngClass]="proy.estado" >
+				<h4 class="card-title">{{proy.title}}</h4>
+				<p class="card-subtitle">Frente te atencion</p>
+			</div>
+		</a>
+	</div>
+	<div class="col-md-4">
+		<a class="noSubrayado grow" href="#">
+			<div class="card card-block addCard m-x-auto">
+				<h1 class="card-title text-xs-center" style="margin: 12px 0px 0px;">
+					<i class="material-icons md-36">add_circle</i>
+				</h1>
+			</div>
+		</a>
 	</div>
 </div>

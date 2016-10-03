@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  proys = ['PNOCH01','QOSDE05','QOSDE11','QOSDE03'];
+  proys = [{title:'PNOCH01',estado:'bien'},{title:'QOSDE05',
+  estado:'regular'},{title:'QOSDE11',estado:'mal'},{title:'QOSDE03',estado:'bien'}];
 }
