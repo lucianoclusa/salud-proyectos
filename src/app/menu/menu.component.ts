@@ -6,12 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  proys = [{title:'PNOCH01',estado:'bien'},{title:'QOSDE05',
-  estado:'regular'},{title:'QOSDE11',estado:'mal'},{title:'QOSDE03',estado:'bien'}];
 
+ proys;
   constructor() { }
 
   ngOnInit() {
+    this.proys=[
+    {title:'PNOCH01',estado:'bien',tipo:'soluciones'},
+    {title:'QOSDE05', estado:'regular',tipo:'soluciones'},
+    {title:'QOSDE11',estado:'mal',tipo:'soluciones'},
+    {title:'QOSDE03',estado:'bien',tipo:'operaciones'},
+    {title:'PNOCH01',estado:'mal',tipo:'soluciones'},
+    {title:'QOSDE05',estado:'bien',tipo:'soluciones'},
+    {title:'QOSDE11',estado:'regular',tipo:'operaciones'},
+    {title:'QOSDE03',estado:'regular',tipo:'soluciones'},    
+    {title:'PNOCH01',estado:'bien',tipo:'soluciones'},
+    {title:'QOSDE05',estado:'regular',tipo:'soluciones'},
+    {title:'QOSDE11',estado:'bien',tipo:'operaciones'},
+    {title:'QOSDE03',estado:'bien',tipo:'soluciones'}
+    ];
   }
 
 }
