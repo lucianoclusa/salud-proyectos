@@ -75,3 +75,11 @@ a.noSubrayado:hover {
 .rotate:hover h4 i{ 
 	transform: rotate(3600deg)
 }
+
+.card{
+	 box-shadow: 5px 5px 2.5px #0288D1;
+}
+
+.card:hover{
+	 box-shadow: 0px 0px 0px #888888 ;
+}
