@@ -14,16 +14,16 @@
 }
 
 .regular{
-	background-color: #FFEB3B
+	background-color: #FFC107
 }
 .regular h4{
 	color: #212121
 }
 .regular {
-	color: #757575
+	color: #FFECB3
 }
 .regular:hover{
-	background-color: #FBC02D;
+	background-color: #FFA000;
 	text-decoration:none; 
 }
 
@@ -31,7 +31,7 @@
 	background-color: #F44336
 }
 .mal h4{
-	color: #FFFFFF
+	color: #212121
 }
 .mal {
 	color: #FFCDD2
