@@ -1,38 +1,39 @@
 .bien{
 	background-color: #8BC34A
 }
-.bien>h4{
+.bien h4{
 	color: #212121
 }
-.bien>p{
+.bien {
 	color: #DCEDC8
 }
+
 .bien:hover{
 	background-color: #689F38;
 	text-decoration:none; 
 }
 
 .regular{
-	background-color: #FFEB3B
+	background-color: #FFC107
 }
-.regular>h4{
+.regular h4{
 	color: #212121
 }
-.regular>p{
-	color: #757575
+.regular {
+	color: #FFECB3
 }
 .regular:hover{
-	background-color: #FBC02D;
+	background-color: #FFA000;
 	text-decoration:none; 
 }
 
 .mal{
 	background-color: #F44336
 }
-.mal>h4{
-	color: #FFFFFF
+.mal h4{
+	color: #212121
 }
-.mal>p{
+.mal {
 	color: #FFCDD2
 }
 .mal:hover{
@@ -44,20 +45,41 @@ a.noSubrayado:hover {
 }
 
 .addCard{
-	background-color: #009688
+	background-color: #009688;
+	vertical-align: middle
 }
-.addCard>h1{
+.addCard h1{
 	color: #FFFFFF;
+	margin: 0px
 }
 .addCard:hover{
 	background-color: #00796B;
-	color: #B2DFDB
+	color: #B2DFDB;
+	cursor: pointer
 }
 
 .md-36{
 	font-size: 36px
 }
 
-.grow >div>h1>i{ transition: all .2s ease-in-out; }
-.grow:hover >div>h1>i{ transform: scale(2); }
+.grow h1 i{ 
+	transition: all .2s ease-in-out; 
+}
+.grow:hover h1 i{ 
+	transform: scale(2);
+}
 
+.rotate h4 i{ 
+	transition: all 5s ease-in-out; 
+}
+.rotate:hover h4 i{ 
+	transform: rotate(3600deg)
+}
+
+.card{
+	 box-shadow: 5px 5px 2.5px #0288D1;
+}
+
+.card:hover{
+	 box-shadow: 0px 0px 0px #888888 ;
+}
