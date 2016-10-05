@@ -10,12 +10,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NuevoProyectoComponent } from './nuevo-proyecto/nuevo-proyecto.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NuevoProyectoComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
