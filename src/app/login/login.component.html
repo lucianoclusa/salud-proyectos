@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div style="margin-top:50px" class="col-md-4 offset-md-4">
     <div class="lightBlueBackground card"> 
-      <div class="card-header"><h1>Nuevo Proyecto</h1></div>
+      <div class="card-header"><h1>Login</h1></div>
           <div class="card-block">
           <div class="form-group">
             <label for="user">Usuario</label>
@@ -12,6 +12,9 @@
             <input [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
           </div>
           <button type="button" class="btn btn-primary" (click)="mostrarUsuarioPassword()" >Ingresar</button>
+          <div class='alert alert-danger'*ngIf='mostrarmensaje' style="margin-top:10px" >
+            {{mensaje}}
+          </div>
       </div>
     </div>
   </div>

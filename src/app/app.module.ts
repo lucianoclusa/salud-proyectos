@@ -10,15 +10,18 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NuevoProyectoComponent } from './nuevo-proyecto/nuevo-proyecto.component';
 import { MenuComponent } from './menu/menu.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NuevoProyectoComponent,
     MenuComponent,
-    LoginComponent
-    NavbarComponent
+    LoginComponent,
+    NavbarComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,

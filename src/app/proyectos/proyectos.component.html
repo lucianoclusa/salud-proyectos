@@ -1,0 +1,22 @@
+<div class="col-md-3 rotate" >
+		<a class="noSubrayado" href="#">
+			<div class="card card-block" [ngClass]="proyecto.estado" >
+				<h4 class="card-title">{{proyecto.title}}
+					<span [ngSwitch]="proyecto.tipo">
+						<i class="material-icons md-36" *ngSwitchCase="'operaciones'" title="Operaciones">
+							bug_report
+						</i>
+						<i class="material-icons md-36" *ngSwitchCase="'soluciones'" title="Soluciones">
+							settings
+						</i>
+					</span>
+				</h4>
+				<p class="card-subtitle">Frente de atencion</p>
+				<i class="material-icons md-36" title="No actualizo esta semana">alarm</i>
+				<i class="material-icons md-36" title="Issue activo">warning</i>
+				<i class="material-icons md-36" title="Riesgos por vencer">add_alert</i>
+				<i class="material-icons md-36" title="Piden Rotacion">cached</i>
+				<i class="material-icons md-36" title="Necesitan Recursos">person_add</i>
+			</div>
+		</a>
+	</div>

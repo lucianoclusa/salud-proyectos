@@ -1,26 +1,5 @@
 <div class="container-fluid"> 
-	<div class="col-md-3 rotate" *ngFor="let proy of proys">
-		<a class="noSubrayado" href="#">
-			<div class="card card-block" [ngClass]="proy.estado" >
-				<h4 class="card-title">{{proy.title}}
-					<span [ngSwitch]="proy.tipo">
-						<i class="material-icons md-36" *ngSwitchCase="'operaciones'" title="Operaciones">
-							bug_report
-						</i>
-						<i class="material-icons md-36" *ngSwitchCase="'soluciones'" title="Soluciones">
-							settings
-						</i>
-					</span>
-				</h4>
-				<p class="card-subtitle">Frente de atencion</p>
-				<i class="material-icons md-36" title="No actualizo esta semana">alarm</i>
-				<i class="material-icons md-36" title="Issue activo">warning</i>
-				<i class="material-icons md-36" title="Riesgos por vencer">add_alert</i>
-				<i class="material-icons md-36" title="Piden Rotacion">cached</i>
-				<i class="material-icons md-36" title="Necesitan Recursos">person_add</i>
-			</div>
-		</a>
-	</div>
+	<app-proyectos [proyecto]='proy' *ngFor="let proy of proys"></app-proyectos>
 	<div class="col-md-12">
 		<a class="noSubrayado grow" [routerLink]="['/nuevoProyecto']">
 			<div class="card card-block addCard m-x-auto">
