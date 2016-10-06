@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
     NuevoProyectoComponent,
     MenuComponent,
     LoginComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
