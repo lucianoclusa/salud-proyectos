@@ -23,7 +23,8 @@ export class MenuComponent implements OnInit {
     {title:'PNOCH01',estado:'bien',tipo:'soluciones'},
     {title:'QOSDE05',estado:'regular',tipo:'soluciones'},
     {title:'QOSDE11',estado:'bien',tipo:'operaciones'},
-    {title:'QOSDE03',estado:'bien',tipo:'soluciones'}
+    {title:'QOSDE03',estado:'bien',tipo:'soluciones'},
+    {title:'QOSDE08',estado:'regular',tipo:'soluciones'}
     ];
   }
 
