@@ -3,6 +3,9 @@
     <div class="lightBlueBackground card"> 
       <div class="card-header"><h1>Nuevo Proyecto</h1></div>
           <div class="card-block">
+          <div class='alert alert-danger'*ngIf='showError' style="margin-top:10px" >
+            {{msjerror}}
+          </div>
           <div class="form-group">
             <label for="CodigoProyecto">Codigo del proyecto</label>
             <input type="text" class="form-control" id="CodigoProyecto" aria-describedby="proyHelp" placeholder="Ingrese el codigo del proyecto">
@@ -20,10 +23,10 @@
           </div>
           <div class="form-group">
             <label for="emailref">Email del lider/referente</label>
-            <input type="email" class="form-control" id="emailref" aria-describedby="proyHelp" placeholder="Ingrese el Lider/Referente">
+            <input [(ngModel)]="email" type="email" class="form-control" id="emailref" aria-describedby="proyHelp" placeholder="Ingrese el Lider/Referente">
             <small id="proyHelp" class="form-text">asdasd</small>
           </div>
-          <a href="#" class="btn btn-primary">Crear</a>
+          <button type="button" (click)="crearProyecto()" class="btn btn-primary">Crear</button>
       </div>   
     </div>
   </div>

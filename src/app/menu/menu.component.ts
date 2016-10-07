@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { SeguridadComponent} from '../shared/seguridad.component';
+import { Router } from '@angular/router';
+import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
+  providers:[SeguridadComponent],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent  extends SeguridadComponent implements OnInit {
 
- proys;
-  constructor() { }
+  proys;
+  constructor(public router:Router,public af:AngularFire) { 
+    super(router,af);
+  }
 
   ngOnInit() {
     this.proys=[
