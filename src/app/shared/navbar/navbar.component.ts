@@ -1,15 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { Router ,NavigationStart} from '@angular/router';
+import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  constructor() { }
+  public disabled:boolean = false;
+  public logged:boolean = false;
+  public username:string;
+  public status:{isopen:boolean} = {isopen: false};
 
-  ngOnInit() {
+  constructor(public router: Router,public af:AngularFire ) {
+    router.events.subscribe(event => {
+      if(event instanceof NavigationStart) {
+        af.auth.subscribe(auth => {
+          if(auth) {
+              this.logged=true;
+              var usr=auth.auth.email.split("@")[0].split(".");
+              this.username=usr[0] +" "+ usr[1];
+          }
+        });
+      }
+    })
   }
 
+  logout(){
+    this.logged=false;
+    this.af.auth.logout();
+  }
 }
