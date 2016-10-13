@@ -76,10 +76,9 @@ a.noSubrayado:hover {
 	transform: rotate(3600deg)
 }
 
-.card{
-	 box-shadow: 5px 5px 2.5px #0288D1;
-}
-
-.card:hover{
-	 box-shadow: 0px 0px 0px #888888 ;
+.newButton{
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

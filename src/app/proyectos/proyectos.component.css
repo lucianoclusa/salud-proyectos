@@ -1,46 +1,58 @@
-.bien{
-	background-color: #8BC34A
-}
-.bien h4{
-	color: #212121
-}
-.bien {
-	color: #DCEDC8
+md-card-content{
+	vertical-align: middle;
+	text-align: center;
 }
 
-.bien:hover{
+md-card-content h1{
+	padding: 25px;
+}
+.bien md-card-content{
+	background-color: #8BC34A
+}
+.bien md-card-content h1{
+	color: #212121
+}
+.bien md-card-actions{
+	color: #8BC34A
+}
+
+.bien:hover md-card-content{
 	background-color: #689F38;
 	text-decoration:none; 
 }
 
-.regular{
+.regular md-card-content{
 	background-color: #FFC107
 }
-.regular h4{
+.regular md-card-content h1{
 	color: #212121
 }
-.regular {
-	color: #FFECB3
+.regular md-card-actions{
+	color: #FFC107
 }
-.regular:hover{
+.regular:hover md-card-content{
 	background-color: #FFA000;
 	text-decoration:none; 
 }
 
-.mal{
+.mal md-card-content{
 	background-color: #F44336
 }
-.mal h4{
+.mal md-card-content h1{
 	color: #212121
 }
-.mal {
-	color: #FFCDD2
+.mal md-card-actions{
+	color: #F44336
 }
-.mal:hover{
+.mal:hover md-card-content{
 	background-color: #D32F2F;
 }
 
 a.noSubrayado:hover {
+	text-decoration:none
+}
+
+a.noSubrayado {
 	text-decoration:none
 }
 
@@ -69,17 +81,9 @@ a.noSubrayado:hover {
 	transform: scale(2);
 }
 
-.rotate h4 i{ 
+.rotate .rota{ 
 	transition: all 5s ease-in-out; 
 }
-.rotate:hover h4 i{ 
+.rotate:hover .rota{ 
 	transform: rotate(3600deg)
-}
-
-.card{
-	 box-shadow: 5px 5px 2.5px #0288D1;
-}
-
-.card:hover{
-	 box-shadow: 0px 0px 0px #888888 ;
 }

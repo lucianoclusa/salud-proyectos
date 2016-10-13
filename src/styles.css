@@ -1,16 +1,4 @@
 .blueBackground{
-	background-color: #03A9F4
-}
-
-.lightBlueBackground{
-	background-color: #559FBF;
-	color: #F3FBFE
-}
-
-.lightBlueBackground> div >div> small{
-	color: #B0DBEE
-}
-
-.lightBlueBackground >.card-header{
-	background-color:#009688
+	background-color: #ebebeb;
+	margin: 0px;
 }

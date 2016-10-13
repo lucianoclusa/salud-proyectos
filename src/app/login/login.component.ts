@@ -26,13 +26,13 @@ mostrarmensaje:boolean=false;
       }});
   }
   mostrarUsuarioPassword() {
+    this.mensaje='';
     console.log(this.user);
     console.log(this.password);
     this.af.auth.login({ email: this.user, password: this.password })
     .then((success) => {this.router.navigate(['/menu'])})
     .catch((error) => {
-      this.mensaje='Usuario Incorrecto'
-      this.mostrarmensaje=true
+      this.mensaje='Usuario o password Incorrecto'
     });
   }
 

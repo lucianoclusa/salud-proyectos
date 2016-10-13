@@ -1,33 +1,21 @@
-<div class="container-fluid">
-  <div class="col-xs-6 offset-xs-3 ">
-    <div class="lightBlueBackground card"> 
-      <div class="card-header"><h1>Nuevo Proyecto</h1></div>
-          <div class="card-block">
-          <div class='alert alert-danger'*ngIf='showError' style="margin-top:10px" >
-            {{msjerror}}
-          </div>
-          <div class="form-group">
-            <label for="CodigoProyecto">Codigo del proyecto</label>
-            <input type="text" class="form-control" id="CodigoProyecto" aria-describedby="proyHelp" placeholder="Ingrese el codigo del proyecto">
-            <small id="proyHelp" class="form-tex">PNOCH01, QOSDE01, etc...</small>
-          </div>
-          <div class="form-group">
-            <label for="NombreProyecto">Nombre del proyecto</label>
-            <input type="text" class="form-control" id="NombreProyecto" aria-describedby="nombHelp" placeholder="Ingrese el nombre del proyecto">
-            <small id="proyHelp" class="form-text">frete de atencion o algo asi</small>
-          </div> 
-          <div class="form-group">
-            <label for="liderReferente">Lider/Referete del proyecto</label>
-            <input type="text" class="form-control" id="liderReferente" aria-describedby="proyHelp" placeholder="Ingrese el Lider/Referente">
-            <small id="proyHelp" class="form-text">asdasd</small>
-          </div>
-          <div class="form-group">
-            <label for="emailref">Email del lider/referente</label>
-            <input [(ngModel)]="email" type="email" class="form-control" id="emailref" aria-describedby="proyHelp" placeholder="Ingrese el Lider/Referente">
-            <small id="proyHelp" class="form-text">asdasd</small>
-          </div>
-          <button type="button" (click)="crearProyecto()" class="btn btn-primary">Crear</button>
-      </div>   
-    </div>
-  </div>
+<div>
+  <md-card class="nproy">
+    <md-toolbar color="accent">Nuevo Proyecto</md-toolbar>
+    <md-card-content>
+      <p>  
+        <md-input placeholder="Codigo del proyecto" style="width: 25%">
+          <md-hint style="color:red" align="end">{{mensaje}}</md-hint>
+        </md-input>
+        <md-input placeholder="Nombre del proyecto" style="width: 70%"></md-input>
+      </p>
+      <p>
+        <md-input placeholder="Lider/Referete del proyecto" style="width: 40%" ></md-input>
+        <md-input placeholder="Email del lider/referente" style="width: 55%" [(ngModel)]="email" type="email"></md-input>
+      </p>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-raised-button color="primary" (click)="crearProyecto()">Crear</button>
+      <button md-raised-button color="warn" routerLink="/menu">Cancelar</button>
+    </md-card-actions>
+  </md-card>
 </div>

@@ -1,12 +1,11 @@
-<div class="container-fluid"> 
-	<app-proyectos [proyecto]='proy' *ngFor="let proy of proys"></app-proyectos>
-	<div class="col-md-12">
-		<a class="noSubrayado grow" [routerLink]="['/nuevoProyecto']">
-			<div class="card card-block addCard m-x-auto">
-				<h1 class="card-title text-xs-center" style="margin: 12px 0px 0px;">
-					<i class="material-icons md-36">add_circle</i>
-				</h1>
-			</div>
-		</a>
-	</div>
-</div>
+<md-grid-list cols="5">
+	<md-grid-tile *ngFor="let proy of proys"> 
+		<app-proyectos [proyecto]='proy'  class="rotate" ></app-proyectos>
+	</md-grid-tile>
+</md-grid-list>
+
+<span class="newButton">
+	<button md-fab routerLink="/nuevoProyecto" color="accent" >
+		<md-icon>add</md-icon>
+	</button>
+</span>

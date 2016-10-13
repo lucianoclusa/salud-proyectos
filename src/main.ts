@@ -1,4 +1,6 @@
 import './polyfills.ts';
+import 'hammerjs'
+import 'firebase'
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';

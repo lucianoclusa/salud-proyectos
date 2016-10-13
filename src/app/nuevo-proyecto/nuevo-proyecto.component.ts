@@ -16,7 +16,7 @@ export class NuevoProyectoComponent extends SeguridadComponent implements OnInit
   private lider:string;
   private email:string;
   private msjerror:string;
-  private showError:boolean;
+  private showError:boolean =false;
 
   constructor(public router:Router,public af:AngularFire) { 
     super(router,af);
