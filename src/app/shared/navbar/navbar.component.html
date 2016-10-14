@@ -1,6 +1,7 @@
 
 <md-toolbar color="primary" style=" position: fixed;z-index:1">
   <span>Salud Proyectos</span>
+  <button md-raised-button routerLink="/menu" [disabled]="menuActive" *ngIf="logged" color="primary" class="toolbarButton">Menu</button>
   <span class="fill-remaining-space"></span>
   <button md-icon-button [md-menu-trigger-for]="menu" *ngIf="logged">
     <md-icon>more_vert</md-icon>
@@ -9,7 +10,7 @@
 
 <md-menu  #menu="mdMenu" x-position="before">
     <button md-menu-item> Cancelar </button>
-    <button md-menu-item> Opciones </button>
+    <button md-menu-item routerLink="/miPerfil" [disabled]="perfilActive"> Opciones </button>
     <button md-menu-item (click)="logout()"> Salir</button>
 </md-menu>
 

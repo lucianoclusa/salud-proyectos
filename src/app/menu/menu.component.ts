@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,HostListener} from '@angular/core';
 import { SeguridadComponent} from '../shared/seguridad.component';
 import { Router } from '@angular/router';
 import { AngularFire } from 'angularfire2';
@@ -12,8 +12,20 @@ import { AngularFire } from 'angularfire2';
 export class MenuComponent  extends SeguridadComponent implements OnInit {
 
   proys;
+  private colNumber:number=5;
   constructor(public router:Router,public af:AngularFire) { 
     super(router,af);
+    if(window.innerWidth>=1200){
+      this.colNumber=5;
+    }else if(window.innerWidth>=940){
+      this.colNumber=4;
+    }else if(window.innerWidth>=720){
+      this.colNumber=3;
+    }else if(window.innerWidth>=576){
+      this.colNumber=2;
+    }else{
+       this.colNumber=1;
+    }
   }
 
   ngOnInit() {
@@ -32,6 +44,21 @@ export class MenuComponent  extends SeguridadComponent implements OnInit {
     {title:'QOSDE03',estado:'bien',tipo:'soluciones'},
     {title:'QOSDE08',estado:'regular',tipo:'soluciones'}
     ];
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if(event.target.innerWidth>=1200){
+      this.colNumber=5;
+    }else if(event.target.innerWidth>=940){
+      this.colNumber=4;
+    }else if(event.target.innerWidth>=720){
+      this.colNumber=3;
+    }else if(event.target.innerWidth>=576){
+      this.colNumber=2;
+    }else{
+       this.colNumber=1;
+    }
   }
 
 }

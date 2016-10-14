@@ -13,10 +13,23 @@ export class NavbarComponent {
   public logged:boolean = false;
   public username:string;
   public status:{isopen:boolean} = {isopen: false};
+  public menuActive:boolean =false;
+  public perfilActive:boolean=false;
 
   constructor(public router: Router,public af:AngularFire ) {
     router.events.subscribe(event => {
       if(event instanceof NavigationStart) {
+        if(event.url=='/menu') {
+          this.menuActive=true;
+          this.perfilActive=false;
+        }else if(event.url=='/miPerfil'){
+          this.menuActive=false;
+          this.perfilActive=true;
+        }
+        else{ 
+          this.menuActive=false;
+          this.perfilActive=false;
+        }
         af.auth.subscribe(auth => {
           if(auth) {
               this.logged=true;

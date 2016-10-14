@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
     LoginComponent,
     NavbarComponent,
     ProyectosComponent,
+    PerfilUsuarioComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<md-grid-list cols="5">
+<md-grid-list [cols]="colNumber">
 	<md-grid-tile *ngFor="let proy of proys"> 
 		<app-proyectos [proyecto]='proy'  class="rotate" ></app-proyectos>
 	</md-grid-tile>
