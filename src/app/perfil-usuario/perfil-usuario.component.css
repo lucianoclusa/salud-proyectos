@@ -1,18 +1,4 @@
 .perfil{
-    padding: 0px;
-    width: 400px;
-}
-
-md-card-content, md-card-action, md-card-footer {
-  padding: 20px;
-}
-
-.buttonBottom{
-    margin-bottom:5px;
-    margin-right: 5px; 
-}
-
-.scrollableList{
-    overflow-y: scroll;
-    max-height: 175px
+    width: 800px;
+    margin: 0 auto;
 }

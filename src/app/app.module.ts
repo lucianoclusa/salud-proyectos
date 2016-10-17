@@ -15,6 +15,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     NavbarComponent,
     ProyectosComponent,
     PerfilUsuarioComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,

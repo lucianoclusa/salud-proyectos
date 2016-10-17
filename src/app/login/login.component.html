@@ -1,18 +1,24 @@
 <div>
   <md-card class="login">
-    <md-toolbar color="accent">Login</md-toolbar>
+    <!--<md-toolbar color="accent">Login</md-toolbar>-->
     <md-card-content>
-      <p>  
-        <md-input placeholder="Usuario/Correo" style="width: 100%" [(ngModel)]="user">
+      <h1>Login</h1>
+      <p>
+        <md-icon>email</md-icon>  
+        <md-input placeholder="Usuario/Correo" style="width: 80%" [(ngModel)]="user">
           <md-hint style="color:red" align="end">{{mensaje}}</md-hint>
         </md-input>
       </p>
       <p>
-        <md-input placeholder="Contraseña" type="password" style="width: 100%" [(ngModel)]="password"></md-input>
+        <md-icon>lock</md-icon>  
+        <md-input placeholder="Contraseña" type="password" style="width: 80%" [(ngModel)]="password"></md-input>
       </p>
+      
+      <md-card-actions align="center">
+        <button md-raised-button color="primary" (click)="mostrarUsuarioPassword()" style="width: 90%">ENTRAR</button>
+        <button md-raised-button  style="width: 90%;margin-top:2px" routerLink="/registro">REGISTRARME</button>
+      </md-card-actions>
+
     </md-card-content>
-    <md-card-actions align="middle">
-      <button md-raised-button color="primary" (click)="mostrarUsuarioPassword()">Entrar</button>
-    </md-card-actions>
   </md-card>
 </div>

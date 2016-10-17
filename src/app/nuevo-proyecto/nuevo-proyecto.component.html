@@ -1,21 +1,36 @@
 <div>
   <md-card class="nproy">
-    <md-toolbar color="accent">Nuevo Proyecto</md-toolbar>
+    <h1>Nuevo Proyecto</h1>
     <md-card-content>
-      <p>  
-        <md-input placeholder="Codigo del proyecto" style="width: 25%">
+      <p>
+        <md-icon>work</md-icon>  
+        <md-input placeholder="Codigo del proyecto" style="width: 30%">
           <md-hint style="color:red" align="end">{{mensaje}}</md-hint>
         </md-input>
-        <md-input placeholder="Nombre del proyecto" style="width: 70%"></md-input>
+        <md-input placeholder="Nombre del proyecto" style="width: 60%"></md-input>
       </p>
       <p>
-        <md-input placeholder="Lider/Referete del proyecto" style="width: 40%" ></md-input>
-        <md-input placeholder="Email del lider/referente" style="width: 55%" [(ngModel)]="email" type="email"></md-input>
+        <md-slide-toggle [(ngModel)]="usuariotoggle">
+          <span *ngIf="usuariotoggle">Usuario Actual</span>
+          <span *ngIf="!usuariotoggle">Otro Usuario</span>
+        </md-slide-toggle>
       </p>
+      <span *ngIf="!usuariotoggle">
+        <h2>Lider/Referente</h2>
+        <p>
+          <md-icon>person</md-icon>
+          <md-input placeholder="Nombre" style="width: 45%" [(ngModel)]="nombre"></md-input>
+          <md-input placeholder="Apelido" style="width: 45%" [(ngModel)]="apellido"></md-input>
+        </p>
+        <p>
+          <md-icon>email</md-icon>
+          <md-input placeholder="Correo" style="width: 90%" [(ngModel)]="email" type="email"></md-input>
+        </p>
+      </span>
     </md-card-content>
     <md-card-actions align="end">
-      <button md-raised-button color="primary" (click)="crearProyecto()">Crear</button>
       <button md-raised-button color="warn" routerLink="/menu">Cancelar</button>
+      <button md-raised-button color="primary" (click)="crearProyecto()">Crear</button>
     </md-card-actions>
   </md-card>
 </div>

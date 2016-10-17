@@ -1,13 +1,4 @@
 .nproy{
-    padding: 0px;
     max-width: 600px;
     margin: 0 auto;
-}
-
-md-card-content, md-card-footer {
-  padding-left: 20px;
-}
-
-md-card-actions{
-  padding-right: 30px;
 }

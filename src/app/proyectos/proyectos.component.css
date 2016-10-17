@@ -36,10 +36,12 @@ md-card-content h1{
 }
 
 .mal md-card-content{
-	background-color: #F44336
+	background-color: #F44336;
+	background-image: url("assets/flame.gif");
+	background-size:     cover;                      /* <------ */
 }
 .mal md-card-content h1{
-	color: #212121
+	color: #212121;
 }
 .mal md-card-actions{
 	color: #F44336

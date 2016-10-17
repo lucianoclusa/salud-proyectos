@@ -1,62 +1,58 @@
-<md-grid-list [cols]="colNumber" rowHeight="3:4">
-  <md-grid-tile>
-    <md-card class="perfil">
-      <md-toolbar color="accent">Mi Perfil</md-toolbar>
-      <md-card-content>
-        <p>  
-          <md-input placeholder="Usuario" style="width: 100%" [(ngModel)]="username" [disabled]="!editable">
-            <md-hint align="end">{{msjUser}}</md-hint>
-          </md-input>
-        </p>
-        <p>
-          <md-input placeholder="Email" style="width: 100%" [(ngModel)]="email" [disabled]="true"></md-input>
-        </p>
-      </md-card-content>
-      <md-card-actions align="end" class="buttonBottom">
-        <button md-raised-button color="primary" *ngIf="!editable" (click)="toogleEditar()">Editar</button>
-        <button md-raised-button color="primary" *ngIf="editable" (click)="guardar()">Guardar</button>
-        <button md-raised-button color="warn" *ngIf="editable" (click)="cancelarEditar()">Cancelar</button>
-      </md-card-actions>
-    </md-card>
-  </md-grid-tile>
 
-  <md-grid-tile>
-    <md-card class="perfil">
-      <md-toolbar color="accent">Password</md-toolbar>
-      <md-card-content>
-        <p>  
-          <md-input placeholder="Contraseña Vieja" style="width: 100%" [(ngModel)]="oldPassword">
-            <md-hint align="end">{{msjPsw}}</md-hint>
-          </md-input>
-        </p>
-        <p>
-          <md-input placeholder="Nueva Contraseña" style="width: 49%" [(ngModel)]="newPassword"></md-input>
-          <md-input placeholder="Confirme nueva Contraseña" style="width: 49%" [(ngModel)]="npcopy"></md-input>
-        </p>
-      </md-card-content>
-      <md-card-actions align="end" class="buttonBottom">
-        <button md-raised-button color="primary" (click)="cambiarPassword()">Cambiar</button>
-      </md-card-actions>
-    </md-card>
-  </md-grid-tile>
+<md-card class="perfil">
+  <h1>Mi Perfil</h1>
+  <md-card-content>
+    <p>
+      <md-icon>person</md-icon>  
+      <md-input placeholder="Usuario" style="width: 95%" [(ngModel)]="username" [disabled]="!editable">
+        <md-hint align="end">{{msjUser}}</md-hint>
+      </md-input>
+    </p>
+    <p>
+      <md-icon>email</md-icon>  
+      <md-input placeholder="Email" style="width: 95%" [(ngModel)]="email" [disabled]="true"></md-input>
+    </p>
+  </md-card-content>
+  <md-card-actions align="end" >
+    <button md-raised-button color="primary" *ngIf="!editable" (click)="toogleEditar()">Editar</button>
+    <button md-raised-button color="warn" *ngIf="editable" (click)="cancelarEditar()">Cancelar</button>
+    <button md-raised-button color="primary" *ngIf="editable" (click)="guardar()">Guardar</button>
+  </md-card-actions>
+</md-card>
 
-  <md-grid-tile>
-    <md-card class="perfil">
-      <md-toolbar color="accent">Mis proyectos</md-toolbar>
-      <md-card-content class="scrollableList">
-        <md-list>
-          <md-list-item> QOSDE05 </md-list-item>
-          <md-list-item> PNOCH01 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-          <md-list-item> QOSDE13 </md-list-item>
-        </md-list>
-      </md-card-content>
-    </md-card>
-  </md-grid-tile>
+<md-card class="perfil">
+  <h2>Password</h2>
+  <md-card-content>
+    <p>
+      <md-icon>lock</md-icon>   
+      <md-input placeholder="Contraseña Vieja" style="width: 95%" [(ngModel)]="oldPassword">
+        <md-hint align="end">{{msjPsw}}</md-hint>
+      </md-input>
+    </p>
+    <p>
+      <md-icon>lock_outline</md-icon> 
+      <md-input placeholder="Nueva Contraseña" style="width: 47%" [(ngModel)]="newPassword"></md-input>
+      <md-input placeholder="Confirme nueva Contraseña" style="width: 47%" [(ngModel)]="npcopy"></md-input>
+    </p>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="primary" (click)="cambiarPassword()">Cambiar</button>
+  </md-card-actions>
+</md-card>
 
-</md-grid-list>
+<md-card class="perfil">
+  <h1>Mis proyectos</h1>
+  <md-card-content class="scrollableList">
+    <md-list>
+      <md-list-item> QOSDE05 </md-list-item>
+      <md-list-item> PNOCH01 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+      <md-list-item> QOSDE13 </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>
