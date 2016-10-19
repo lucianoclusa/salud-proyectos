@@ -6,25 +6,33 @@
      
       <p>
         <md-icon>person</md-icon>  
-        <md-input placeholder="Nombre" style="width: 45%" [(ngModel)]="nombre"></md-input>
-        <md-input placeholder="Apelido" style="width: 45%" [(ngModel)]="apellido"></md-input>
+        <md-input placeholder="Nombre" style="width: 45%" [(ngModel)]="nombre">
+          <md-hint style="color:red" align="end">{{errorNombre}}</md-hint>
+        </md-input>
+        <md-input placeholder="Apelido" style="width: 45%" [(ngModel)]="apellido">
+          <md-hint style="color:red" align="end">{{errorApellido}}</md-hint>
+        </md-input>
       </p>
       
       <p>
         <md-icon>email</md-icon>  
-        <md-input placeholder="Correo" style="width: 90%" [(ngModel)]="user">
-          <md-hint style="color:red" align="end">{{mensaje}}</md-hint>
+        <md-input placeholder="Correo" style="width: 90%" [(ngModel)]="email">
+          <md-hint style="color:red" align="end">{{errorMail}}</md-hint>
         </md-input>
       </p>
 
       <p>
         <md-icon>lock</md-icon>  
-        <md-input placeholder="Contraseña" type="password" style="width: 45%" [(ngModel)]="password"></md-input>
-        <md-input placeholder="Confirme Contraseña" type="password" style="width: 45%" [(ngModel)]="passwordconf"></md-input>
+        <md-input placeholder="Contraseña" type="password" style="width: 45%" [(ngModel)]="password">
+          
+        </md-input>
+        <md-input placeholder="Confirme Contraseña" type="password" style="width: 45%" [(ngModel)]="passwordconf">
+          <md-hint style="color:red" align="end">{{errorPassword}}</md-hint>
+        </md-input>
       </p>
       
       <md-card-actions align="center">
-        <button md-raised-button color="primary" style="width: 90%">REGISTRARME</button>
+        <button md-raised-button color="primary" style="width: 90%" (click)="registrar()">REGISTRARME</button>
         <button md-raised-button  style="width: 90%;margin-top:2px" routerLink="/">CANCELAR</button>
       </md-card-actions>
 

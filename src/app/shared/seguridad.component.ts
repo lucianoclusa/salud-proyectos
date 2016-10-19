@@ -9,7 +9,12 @@ export class SeguridadComponent {
         this.af.auth.subscribe(
             auth => {
                 if(auth) {
-                    console.log('logged in');
+                    if(auth.auth.emailVerified){
+                        console.log('logeado');
+                    }else{
+                        console.log('no verificada');
+                        this.router.navigate(['/info',"noValidada"])
+                    }
                 } else {
                     console.log('not logged in');
                     this.router.navigate(['/']);
