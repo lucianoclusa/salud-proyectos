@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFire } from 'angularfire2';
 
@@ -8,15 +8,16 @@ import { AngularFire } from 'angularfire2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-user;
-password:string;
-mensaje:string;
-mostrarmensaje:boolean=false;
+export class LoginComponent implements OnInit,OnDestroy {
+  private user;
+  private password:string;
+  private mensaje:string;
+  private mostrarmensaje:boolean=false;
+  private subs:any;
   constructor(private router:Router,private af:AngularFire) { }
 
   ngOnInit() {
-    this.af.auth.subscribe(
+    this.subs=this.af.auth.subscribe(
       auth => {
     if(auth) {
       console.log('logged in');
@@ -35,5 +36,9 @@ mostrarmensaje:boolean=false;
       this.mensaje='Usuario o password Incorrecto'
     });
   }
+
+  ngOnDestroy(){
+        this.subs.unsubscribe();
+    }
 
 }

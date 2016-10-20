@@ -1,3 +1,11 @@
-<p>
-  {{msj}}
-</p>
+<md-card class="msj">
+  <md-card-header>
+    <md-icon md-card-avatar>{{icon}}</md-icon>
+    <md-card-title>{{msj}}</md-card-title>
+    <md-card-subtitle>{{submsj}} 
+      <span *ngIf='showbutton'> 
+        <button md-button (click)='reenviarMail()' color="primary">AQUI</button>
+      </span> 
+    </md-card-subtitle>
+  </md-card-header>
+</md-card>

@@ -35,7 +35,7 @@ export class RegistroComponent implements OnInit {
     this.af.auth.createUser({email:this.email,password:this.password})
     .then((success) => {
       console.log(success);
-      success.auth.updateProfile({displayName:this.nombre+" "+this.apellido, photoURL: null});
+      success.auth.updateProfile({displayName:this.nombre+" "+this.apellido, photoURL: ""});
       success.auth.sendEmailVerification();
       this.router.navigate(['/info',"validarCuenta"])}
     ).catch(

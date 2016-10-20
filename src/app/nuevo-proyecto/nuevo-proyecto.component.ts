@@ -17,6 +17,7 @@ export class NuevoProyectoComponent extends SeguridadComponent implements OnInit
   private email:string;
   private msjerror:string;
   private showError:boolean =false;
+  private usuariotoggle:boolean=true;
 
   constructor(public router:Router,public af:AngularFire) { 
     super(router,af);
@@ -26,15 +27,15 @@ export class NuevoProyectoComponent extends SeguridadComponent implements OnInit
   }
 
   crearProyecto(){
-    this.af.auth.createUser({email:this.email,password:'initial01'})
-    .then((success) => {
-      console.log(success);
-      success.auth.sendEmailVerification();
-      this.router.navigate(['/menu'])})
-    .catch((error) => {
-        this.msjerror=error.message;
-        this.showError=true
-    });
+    // this.af.auth.createUser({email:this.email,password:'initial01'})
+    // .then((success) => {
+    //   console.log(success);
+    //   success.auth.sendEmailVerification();
+    //   this.router.navigate(['/menu'])})
+    // .catch((error) => {
+    //     this.msjerror=error.message;
+    //     this.showError=true
+    // });
   }
 
 }

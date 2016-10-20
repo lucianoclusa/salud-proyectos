@@ -1,4 +1,4 @@
-import { Component, OnInit,HostListener } from '@angular/core';
+import { Component, OnInit,HostListener,OnDestroy } from '@angular/core';
 import { SeguridadComponent} from '../shared/seguridad.component';
 import { Router } from '@angular/router';
 import { AngularFire } from 'angularfire2';
@@ -9,7 +9,7 @@ import { AngularFire } from 'angularfire2';
   styleUrls: ['./perfil-usuario.component.css'],
   providers:[SeguridadComponent],
 })
-export class PerfilUsuarioComponent extends SeguridadComponent implements OnInit {
+export class PerfilUsuarioComponent extends SeguridadComponent implements OnInit, OnDestroy {
 
   private user:firebase.User;
   private username:string;
@@ -22,10 +22,10 @@ export class PerfilUsuarioComponent extends SeguridadComponent implements OnInit
   private newPassword:string;
   private npcopy:string;
   private colNumber:number=3;
-
+  private subs:any;
   constructor(public router:Router,public af:AngularFire) { 
     super(router,af);
-    this.af.auth.subscribe(
+    this.subs=this.af.auth.subscribe(
       auth=>{
         this.user=auth.auth;
         this.username=this.user.displayName;
@@ -53,7 +53,8 @@ export class PerfilUsuarioComponent extends SeguridadComponent implements OnInit
   }
 
   cancelarEditar(){
-    this.af.auth.subscribe(
+    this.subs.unsubscribe();
+    this.subs=this.af.auth.subscribe(
       auth=>{
         this.user=auth.auth;
         this.username=this.user.displayName;
@@ -93,6 +94,10 @@ export class PerfilUsuarioComponent extends SeguridadComponent implements OnInit
       });
     }
   }
+
+  ngOnDestroy(){
+        this.subs.unsubscribe();
+    }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {

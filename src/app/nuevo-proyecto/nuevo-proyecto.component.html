@@ -9,6 +9,17 @@
         </md-input>
         <md-input placeholder="Nombre del proyecto" style="width: 60%"></md-input>
       </p>
+
+      <h2>Tipo de Proyecto:</h2> 
+      <p>
+        
+        <md-slide-toggle [(ngModel)]="soluciones">
+          <span *ngIf="soluciones">A.D. (Soluciones)</span>
+          <span *ngIf="!soluciones">A.M.S (Operaciones)</span>
+        </md-slide-toggle>
+      </p>
+
+      <h2>Lider/Referente:</h2>
       <p>
         <md-slide-toggle [(ngModel)]="usuariotoggle">
           <span *ngIf="usuariotoggle">Usuario Actual</span>
@@ -16,7 +27,7 @@
         </md-slide-toggle>
       </p>
       <span *ngIf="!usuariotoggle">
-        <h2>Lider/Referente</h2>
+        
         <p>
           <md-icon>person</md-icon>
           <md-input placeholder="Nombre" style="width: 45%" [(ngModel)]="nombre"></md-input>
