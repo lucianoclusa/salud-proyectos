@@ -17,6 +17,7 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { InformacionComponent } from './informacion/informacion.component';
     PerfilUsuarioComponent,
     RegistroComponent,
     InformacionComponent,
+    MenuFiltrosComponent,
   ],
   imports: [
     BrowserModule,

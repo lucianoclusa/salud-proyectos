@@ -1,0 +1,49 @@
+.botonMenu{
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.showTipo{
+    display: inline-block;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+}
+
+.showEstado{
+    display: inline-block;
+    position: fixed;
+    bottom: 140px;
+    left: 20px;
+}
+
+.hidden{
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;    
+}
+
+.move{
+    transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.gris{
+    background-color: #ebebeb;
+}
+
+.rojo{
+	background-color: #F44336;
+}
+
+.amarillo{
+	background-color: #FFC107;
+}
+
+.verde{
+    background-color: #8BC34A;
+}

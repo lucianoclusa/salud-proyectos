@@ -11,7 +11,8 @@ import { AngularFire } from 'angularfire2';
 })
 export class MenuComponent  extends SeguridadComponent implements OnInit {
 
-  proys;
+  private proys;
+  private proysSource;
   private colNumber:number=5;
   constructor(public router:Router,public af:AngularFire) { 
     super(router,af);
@@ -29,7 +30,7 @@ export class MenuComponent  extends SeguridadComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.proys=[
+    this.proysSource=[
     {title:'PNOCH01',estado:'bien',tipo:'soluciones'},
     {title:'QOSDE05', estado:'regular',tipo:'soluciones'},
     {title:'QOSDE11',estado:'mal',tipo:'soluciones'},
@@ -44,6 +45,7 @@ export class MenuComponent  extends SeguridadComponent implements OnInit {
     {title:'QOSDE03',estado:'bien',tipo:'soluciones'},
     {title:'QOSDE08',estado:'regular',tipo:'soluciones'}
     ];
+    this.proys=this.proysSource;
   }
 
   @HostListener('window:resize', ['$event'])
@@ -59,6 +61,17 @@ export class MenuComponent  extends SeguridadComponent implements OnInit {
     }else{
        this.colNumber=1;
     }
+  }
+
+  filtrar(filtro){
+    this.proys=this.proysSource.filter( proy =>{
+      if(filtro.estado=="") return true;
+      else return filtro.estado== proy.estado;
+    });
+    this.proys=this.proys.filter( proy =>{
+      if(filtro.tipo=="") return true;
+      else return filtro.tipo== proy.tipo;
+    });
   }
 
 }

@@ -1,0 +1,9 @@
+<button md-fab color="accent" [ngClass]="tipo" class="move" (click)="toogleTipo()">
+	  	<md-icon>{{tipoIcono}}</md-icon>
+</button>
+
+<button md-fab [ngClass]="[estado,estadoColor]" class="move" (click)="toogleEstado()"></button>
+
+<button md-fab color="accent" class="botonMenu" (click)="toogleFilters()">
+    <md-icon>{{iconFilters}}</md-icon>
+</button>
