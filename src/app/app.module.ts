@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AngularFireModule,AuthProviders,AuthMethods } from 'angularfire2';
 import { myFirebaseConfig,myFirebaseAuthConfig } from '../environments/environment';
 import { MaterialModule } from '@angular/material';
+import {SelectModule} from 'ng2-select/ng2-select';
 
 import { AppComponent } from './app.component';
 import { NuevoProyectoComponent } from './nuevo-proyecto/nuevo-proyecto.component';
@@ -20,7 +21,6 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
 import { VerProyectoComponent } from './ver-proyecto/ver-proyecto.component';
 import { ProyectoWizardComponent } from './proyecto-wizard/proyecto-wizard.component';
-import { MdCalendarModule} from '@material2-extra/calendar';
 import { CalendarioComponent } from './calendario/calendario.component'
 
 
@@ -47,7 +47,7 @@ import { CalendarioComponent } from './calendario/calendario.component'
     OsdeSaludoAngular2RoutingModule,
     AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig),
     MaterialModule.forRoot(),
-    MdCalendarModule.forRoot()
+    SelectModule
   ],
   providers: [OsdeSaludoAngular2RoutingModule],
   bootstrap: [AppComponent]
