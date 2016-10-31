@@ -1,4 +1,4 @@
-<a class="noSubrayado rotate" href="#">
+<a class="noSubrayado rotate" [routerLink]="['/proyecto',proyecto.title]">
 	<md-card  [ngClass]="proyecto.estado">
 		<md-card-header>
 			<span md-card-avatar [ngSwitch]="proyecto.tipo" class="rota">

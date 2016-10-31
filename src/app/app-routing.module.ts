@@ -6,6 +6,10 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { VerProyectoComponent } from './ver-proyecto/ver-proyecto.component';
+import { ProyectoWizardComponent } from './proyecto-wizard/proyecto-wizard.component';
+
+
 
 const routes: Routes = [
   {path: 'menu',component: MenuComponent},
@@ -13,6 +17,8 @@ const routes: Routes = [
   {path: 'miPerfil',component: PerfilUsuarioComponent},
   {path: 'registro',component: RegistroComponent},
   {path: 'info/:msj',component: InformacionComponent},
+  {path: 'proyecto/:id',component: VerProyectoComponent},
+  {path: 'wizard/:id',component: ProyectoWizardComponent},
   {path: '',component: LoginComponent}
 ];
 

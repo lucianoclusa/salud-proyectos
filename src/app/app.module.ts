@@ -18,6 +18,10 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { RegistroComponent } from './registro/registro.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
+import { VerProyectoComponent } from './ver-proyecto/ver-proyecto.component';
+import { ProyectoWizardComponent } from './proyecto-wizard/proyecto-wizard.component';
+import { MdCalendarModule} from '@material2-extra/calendar';
+import { CalendarioComponent } from './calendario/calendario.component'
 
 
 @NgModule({
@@ -32,6 +36,9 @@ import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
     RegistroComponent,
     InformacionComponent,
     MenuFiltrosComponent,
+    VerProyectoComponent,
+    ProyectoWizardComponent,
+    CalendarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
     HttpModule,
     OsdeSaludoAngular2RoutingModule,
     AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig),
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    MdCalendarModule.forRoot()
   ],
   providers: [OsdeSaludoAngular2RoutingModule],
   bootstrap: [AppComponent]

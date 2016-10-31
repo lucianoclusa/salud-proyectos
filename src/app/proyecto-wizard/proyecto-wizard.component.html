@@ -1,0 +1,51 @@
+<md-card class="container">
+  <div class="row">
+    <div><button md-mini-fab disabled>1</button>-Datos iniciales</div>
+    <div><button md-mini-fab disabled>2</button>-Datos del equipo</div>
+    <div><button md-mini-fab disabled>3</button>-Carga inicial</div>
+  </div>
+
+  <div class="row">
+    <h1>Contanos un poco de {{id}}!</h1>
+  </div>  
+  
+  <div class="rowLeft">
+    <div class="input"><md-input placeholder="1)Quien es el Lider del lado del cliente?" class="input"></md-input></div>
+  </div>
+
+  <div class="rowLeft">
+    <div class="input2 clickable" (click)="openDateFrom()">
+      <md-input placeholder="2)Incio del proyecto" [(ngModel)]="dateFromInput" disabled class="input"></md-input>
+    </div>
+    <div class="input2 clickable" (click)="openDateTo()">
+      <md-input placeholder="3)Fin del proyecto" [(ngModel)]="dateToInput" disabled class="input"></md-input>
+    </div>
+  </div>
+
+  <div class="row">
+    <div><button md-raised-button color="primary">Siguiente</button></div>
+  </div>
+</md-card>
+
+<div class='modal' [(ngClass)]="dateFrom">
+  <div class="content">
+  <md-card style="padding: 0;">
+    <calendario (pick)='setFromDateValue($event)'></calendario>
+    <div>
+      <button md-raised-button color="warn" (click)="closeFrom()">Cancelar</button>
+    </div>
+  </md-card>
+  </div>
+</div>
+
+<div class='modal' [(ngClass)]="dateTo">
+  <div class="content">
+  <md-card style="padding: 0;">
+    <calendario (pick)='setToDateValue($event)'></calendario>
+    <div>
+      <button md-raised-button color="warn" (click)="closeTo()">Cancelar</button>
+    </div>
+  </md-card>
+  </div>
+</div>
+
