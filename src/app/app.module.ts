@@ -21,7 +21,8 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
 import { VerProyectoComponent } from './ver-proyecto/ver-proyecto.component';
 import { ProyectoWizardComponent } from './proyecto-wizard/proyecto-wizard.component';
-import { CalendarioComponent } from './calendario/calendario.component'
+import { CalendarioComponent } from './calendario/calendario.component';
+import { MultiSelectComponent } from './multi-select/multi-select.component'
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CalendarioComponent } from './calendario/calendario.component'
     VerProyectoComponent,
     ProyectoWizardComponent,
     CalendarioComponent,
+    MultiSelectComponent,
   ],
   imports: [
     BrowserModule,

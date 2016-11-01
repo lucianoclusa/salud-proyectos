@@ -1,0 +1,20 @@
+.input{
+    border: 1px solid #ccc !important;
+    padding: 8px; 
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip button {
+    float: right;
+    margin-right: -25px;
+    margin-left:10px;  
+}

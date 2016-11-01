@@ -10,20 +10,6 @@ export class ProyectoWizardComponent implements OnInit {
   private id:string;
   private sub: any;
 
-  public items:Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
-    'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
-    'Budapest', 'Cologne', 'Copenhagen', 'Dortmund', 'Dresden', 'Dublin', 'Düsseldorf',
-    'Essen', 'Frankfurt', 'Genoa', 'Glasgow', 'Gothenburg', 'Hamburg', 'Hannover',
-    'Helsinki', 'Leeds', 'Leipzig', 'Lisbon', 'Łódź', 'London', 'Kraków', 'Madrid',
-    'Málaga', 'Manchester', 'Marseille', 'Milan', 'Munich', 'Naples', 'Palermo',
-    'Paris', 'Poznań', 'Prague', 'Riga', 'Rome', 'Rotterdam', 'Seville', 'Sheffield',
-    'Sofia', 'Stockholm', 'Stuttgart', 'The Hague', 'Turin', 'Valencia', 'Vienna',
-    'Vilnius', 'Warsaw', 'Wrocław', 'Zagreb', 'Zaragoza'];
-
-  private value:any = ['Athens'];
-  private _disabledV:string = '0';
-  private disabled:boolean = false;
-
   private paso1:string;
   private paso2:string;
   private paso3:string;
@@ -34,6 +20,11 @@ export class ProyectoWizardComponent implements OnInit {
   private dateToInput:string;
 
   private dateTo:string='hide';
+
+  private apps:any[]=[];
+
+  private appNombreInput:string;
+  private tecs:any[]=[];
 
   constructor(private route: ActivatedRoute) {
     this.paso1="showPaso";
@@ -101,15 +92,14 @@ export class ProyectoWizardComponent implements OnInit {
     this.dateFromInput= date.toLocaleString().split(',')[0];
   }
 
-  public selected(value:any):void {
-    console.log('Selected value is: ', value);
+  addApp(tecs){
+    let app={nombre:this.appNombreInput,tecnologias:tecs.tecs.reduce((a,b)=>a+','+b)}
+    tecs.clrTecs();
+    this.appNombreInput="";
+    this.apps.push(app);
   }
 
-  public removed(value:any):void {
-    console.log('Removed value is: ', value);
-  }
-
-  public refreshValue(value:any):void {
-    this.value = value;
+  removeApp(appname){
+    this.apps=this.apps.filter(a=>a.nombre!=appname);
   }
 }
