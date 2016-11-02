@@ -1,10 +1,12 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {ActivatedRoute} from "@angular/router"
+import {MdIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-proyecto-wizard',
   templateUrl: './proyecto-wizard.component.html',
-  styleUrls: ['./proyecto-wizard.component.css']
+  styleUrls: ['./proyecto-wizard.component.css'],
+  viewProviders: [MdIconRegistry]
 })
 export class ProyectoWizardComponent implements OnInit {
   private id:string;
@@ -13,6 +15,7 @@ export class ProyectoWizardComponent implements OnInit {
   private paso1:string;
   private paso2:string;
   private paso3:string;
+  private progress:number=0;
 
   private dateFromInput:string;
   private dateFrom:string='hide';
@@ -26,10 +29,11 @@ export class ProyectoWizardComponent implements OnInit {
   private appNombreInput:string;
   private tecs:any[]=[];
 
-  constructor(private route: ActivatedRoute) {
-    this.paso1="showPaso";
-    this.paso2="hidePaso";
-    this.paso3="hidePaso";
+  constructor(private route: ActivatedRoute,mdIconRegistry: MdIconRegistry) {
+    mdIconRegistry.registerFontClassAlias('emoji', 'em');
+    this.paso1="show";
+    this.paso2="hide";
+    this.paso3="hide";
    }
 
   ngOnInit() {
@@ -101,5 +105,49 @@ export class ProyectoWizardComponent implements OnInit {
 
   removeApp(appname){
     this.apps=this.apps.filter(a=>a.nombre!=appname);
+  }
+
+  next(){
+    this.progress+=1;
+    console.log("paso");
+    switch(this.progress){
+      case 1:
+        this.paso1='hide';
+        this.paso2='show';
+        this.paso3='hide';
+        break;
+      case 2:
+        this.paso1='hide';
+        this.paso2='hide';
+        this.paso3='show';
+        break;
+      case 3:
+        this.paso1='hide';
+        this.paso2='hide';
+        this.paso3='hide';
+        break;
+    }
+  }
+
+  back(){
+    this.progress-=1;
+    console.log("paso");
+    switch(this.progress){
+      case 0:
+        this.paso1='show';
+        this.paso2='hide';
+        this.paso3='hide';
+        break;
+      case 1:
+        this.paso1='hide';
+        this.paso2='show';
+        this.paso3='hide';
+        break;
+      case 2:
+        this.paso1='hide';
+        this.paso2='hide';
+        this.paso3='show';
+        break;
+    }
   }
 }

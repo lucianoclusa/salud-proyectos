@@ -19,6 +19,15 @@
   flex-wrap: nowrap;
   display: flex;
 }
+
+.container .rowEnd{
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  flex-wrap: nowrap;
+  display: flex;
+}
+
 .input{
   width: 100%;
 }
