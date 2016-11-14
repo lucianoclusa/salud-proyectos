@@ -24,10 +24,20 @@ export class ProyectoWizardComponent implements OnInit {
 
   private dateTo:string='hide';
 
+  private dateIssue='hide';
+  private dateIssueInput;
+
   private apps:any[]=[];
 
   private appNombreInput:string;
   private tecs:any[]=[];
+
+  private issues:any[]=[];
+  private accionIssue;
+  private descIssue;
+  private gdmIssue;
+
+  private actividades:String[]=[];
 
   constructor(private route: ActivatedRoute,mdIconRegistry: MdIconRegistry) {
     mdIconRegistry.registerFontClassAlias('emoji', 'em');
@@ -79,7 +89,7 @@ export class ProyectoWizardComponent implements OnInit {
     this.dateToInput= date.toLocaleString().split(',')[0];
   }
 
-   openDateFrom(){
+  openDateFrom(){
     this.dateFrom="show";
   }
 
@@ -94,6 +104,19 @@ export class ProyectoWizardComponent implements OnInit {
   setFromDateValue(date:Date){
     this.dateFrom="hide";
     this.dateFromInput= date.toLocaleString().split(',')[0];
+  }
+
+  openDateIssue(){
+    this.dateIssue="show";
+  }
+
+  closeIssue(){
+    this.dateIssue="hide";
+  }
+
+  setIssueDate(date){
+    this.dateIssue="hide";
+    this.dateIssueInput= date.toLocaleString().split(',')[0];
   }
 
   addApp(tecs){
@@ -149,5 +172,23 @@ export class ProyectoWizardComponent implements OnInit {
         this.paso3='show';
         break;
     }
+  }
+
+  addActividad(actividad){
+    this.actividades.push(actividad.value);
+    actividad.value="";
+  }
+
+  removeActividad(actividad){
+    this.actividades=this.actividades.filter(a=>a!=actividad);
+  }
+
+  addIssue(){
+    let issue={descripcion:this.descIssue,accion:this.accionIssue,fecha:this.dateIssueInput,gdm:this.gdmIssue};
+    this.issues.push(issue);
+    this.descIssue="";
+    this.accionIssue="";
+    this.dateIssueInput="";
+    this.gdmIssue="";
   }
 }
