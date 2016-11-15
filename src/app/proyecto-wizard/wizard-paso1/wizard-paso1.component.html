@@ -74,7 +74,7 @@
 <div class='modal container' [(ngClass)]="dateFrom">
   <div class="content">
   <md-card style="padding: 0;">
-    <calendario (pick)='setFromDateValue($event)'></calendario>
+    <app-calendario (pick)='setFromDateValue($event)'></app-calendario>
     <div class="rowEnd">
       <button md-raised-button color="warn" (click)="closeFrom()">Cancelar</button>
     </div>
@@ -85,7 +85,7 @@
 <div class='modal container' [(ngClass)]="dateTo">
   <div class="content">
     <md-card style="padding: 0;">
-      <calendario (pick)='setToDateValue($event)'></calendario>
+      <app-calendario (pick)='setToDateValue($event)'></app-calendario>
       <div  class="rowEnd">
         <button md-raised-button color="warn" (click)="closeTo()">Cancelar</button>
       </div>

@@ -69,7 +69,7 @@
   <div class='modal container' [(ngClass)]="dateIssue">
   <div class="content">
     <md-card style="padding: 0;">
-      <calendario (pick)='setIssueDate($event)'></calendario>
+      <app-calendario (pick)='setIssueDate($event)'></app-calendario>
       <div  class="rowEnd">
         <button md-raised-button color="warn" (click)="closeIssue()">Cancelar</button>
       </div>
