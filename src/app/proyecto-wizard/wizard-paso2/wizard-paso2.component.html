@@ -1,0 +1,53 @@
+  <div>
+    <div class="row">
+      <h1> Contanos del equipo de {{proyectoId}}!</h1>
+    </div>
+    <div class="rowLeft">
+      1)Cuantas colaboradores conforman el equipo?
+    </div>
+    <div class="rowLeft">
+      <div class="input"><md-input placeholder="Asignados" type="number" class="input"></md-input></div>
+      <div class="input"><md-input placeholder="PS" type="number" class="input"></md-input></div>
+    </div>
+    <div class="rowLeft">
+      2)Cual es la tasa de rotacion promedio?
+    </div>
+    <div class="rowLeft">
+      <div class="input">
+        <md-input placeholder="Rotacion" type="number" class="input">
+          <span md-suffix>%</span>
+        </md-input>
+      </div>
+    </div>
+    <div class="rowLeft">
+      3)Como esta el animo de los colaboradores?
+    </div>
+    <div class="rowLeft">
+     <md-button-toggle-group name="humor">
+       <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-heart_eyes"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-smile"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-grin"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-no_mouth"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-neutral_face"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="regular">
+            <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-expressionless"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="regular">
+            <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-angry"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="mal">
+            <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-rage"></md-icon>
+        </md-button-toggle>
+      </md-button-toggle-group>
+    </div>
+  </div>

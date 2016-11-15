@@ -2,3 +2,9 @@
     width: 800px;
     margin: 0 auto;
 }
+
+.listwrap{
+  overflow-y: scroll;
+  max-height: 150px;
+  min-height: 150px;
+}

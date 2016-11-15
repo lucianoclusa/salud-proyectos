@@ -4,7 +4,7 @@
   width: 60%;
   margin: 0 auto;
 }
-.container .row{
+.row{
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
@@ -12,7 +12,7 @@
   display: flex;
 }
 
-.container .rowLeft{
+.rowLeft{
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -20,7 +20,7 @@
   display: flex;
 }
 
-.container .rowEnd{
+.rowEnd{
   flex-direction: row;
   justify-content: flex-end;
   width: 100%;

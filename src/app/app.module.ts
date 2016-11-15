@@ -22,7 +22,10 @@ import { MenuFiltrosComponent } from './menu-filtros/menu-filtros.component';
 import { VerProyectoComponent } from './ver-proyecto/ver-proyecto.component';
 import { ProyectoWizardComponent } from './proyecto-wizard/proyecto-wizard.component';
 import { CalendarioComponent } from './calendario/calendario.component';
-import { MultiSelectComponent } from './multi-select/multi-select.component'
+import { MultiSelectComponent } from './multi-select/multi-select.component';
+import { WizardPaso1Component } from './proyecto-wizard/wizard-paso1/wizard-paso1.component';
+import { WizardPaso2Component } from './proyecto-wizard/wizard-paso2/wizard-paso2.component';
+import { WizardPaso3Component } from './proyecto-wizard/wizard-paso3/wizard-paso3.component'
 
 
 @NgModule({
@@ -41,6 +44,9 @@ import { MultiSelectComponent } from './multi-select/multi-select.component'
     ProyectoWizardComponent,
     CalendarioComponent,
     MultiSelectComponent,
+    WizardPaso1Component,
+    WizardPaso2Component,
+    WizardPaso3Component,
   ],
   imports: [
     BrowserModule,

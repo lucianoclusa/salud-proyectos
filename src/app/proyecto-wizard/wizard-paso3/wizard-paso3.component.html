@@ -1,0 +1,78 @@
+<div>
+    <div class="row">
+      <h1> Vamos a hacer el primer reporte de {{proyectoId}}!</h1>
+    </div>
+
+    <div class="rowLeft">
+      1)Cuales fueron las principales activdades de la semana?
+    </div>
+    <div class="rowLeft">
+      <div class="input2">
+        <md-input placeholder="Descripcion"  class="input" #actividadInput></md-input>
+        <div class="row">
+          <button md-mini-fab color="primary" (click)="addActividad(actividadInput)"><md-icon class="md-24">add</md-icon></button>
+        </div>
+      </div>
+      <div class="listwrap input2">
+        <md-list>
+          <md-list-item *ngFor="let actividad of actividades">
+            <button md-mini-fab color="warn" (click)="removeActividad(actividad)"><md-icon class="md-24">delete</md-icon></button>
+            {{actividad}}
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+    <div class="rowLeft">
+      2)Cuales son los riesgos que tiene el proyecto?
+    </div>
+
+    <div class="rowLeft">
+    <div class="input2">
+      <div class="rowLeft">
+        <md-input placeholder="Descripcion" class="input" [(ngModel)]="descIssue"></md-input>
+      </div>
+      <div class="rowLeft">
+        <md-input placeholder="Acciones" class="input" [(ngModel)]="accionIssue"></md-input>
+      </div>
+
+      <div class="rowLeft">
+        <div class="input2 clickable" (click)="openDateIssue()">
+          <md-input placeholder="Fecha de vencimiento" [(ngModel)]="dateIssueInput" disabled class="input"></md-input>
+        </div>
+        <div class="input2">
+          <md-input placeholder="GDM" class="input" [(ngModel)]="gdmIssue"></md-input>
+        </div>
+      </div>
+
+      <div class="row">
+        <button md-mini-fab (click)="addIssue()" color="primary">
+            <md-icon class="md-24">add</md-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="rowLeft listwrap input2">
+      <md-list>
+        <md-list-item *ngFor="let issue of issues">
+          <button md-mini-fab color="warn" (click)="removeIssue(issue)"><md-icon class="md-24">delete</md-icon></button>
+          {{issue.gdm}}-
+          {{issue.descripcion}}-
+          {{issue.accion}}-
+          {{issue.fecha}}
+        </md-list-item>
+      </md-list>
+    </div>
+    </div>
+
+  </div>
+
+  <div class='modal container' [(ngClass)]="dateIssue">
+  <div class="content">
+    <md-card style="padding: 0;">
+      <calendario (pick)='setIssueDate($event)'></calendario>
+      <div  class="rowEnd">
+        <button md-raised-button color="warn" (click)="closeIssue()">Cancelar</button>
+      </div>
+    </md-card>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div>
+    <div class="row">
+      <h1>Contanos un poco de {{proyectoId}}!</h1>
+    </div>  
+    
+    <div class="rowLeft">
+      1)Quien es el Lider del lado del cliente?
+    </div>
+    <div class="rowLeft">
+      <div class="input"><md-input placeholder="Nombre y Apellido" class="input"></md-input></div>
+    </div>
+
+    <div class="rowLeft">
+      2)Cuanto dura el proyecto?
+    </div>
+    <div class="rowLeft">
+      <div class="input2 clickable" (click)="openDateFrom()">
+        <md-input placeholder="Fecha de Incio" [(ngModel)]="dateFromInput" disabled class="input"></md-input>
+      </div>
+      <div class="input2 clickable" (click)="openDateTo()">
+        <md-input placeholder="Fecha de Fin" [(ngModel)]="dateToInput" disabled class="input"></md-input>
+      </div>
+    </div>
+
+    <div class="rowLeft">
+      3)Como es la relacion con el cliente?
+    </div>
+    <div class="rowLeft"> 
+      <md-button-toggle-group name="status">
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-heart_eyes"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-confused"></md-icon>
+        </md-button-toggle>
+        <md-button-toggle value="bien" (color)="warn">
+          <md-icon fontSet="emoji" class="fa-2x" fontIcon="em-fire"></md-icon>
+        </md-button-toggle>
+      </md-button-toggle-group>
+    </div>
+
+    <div class="rowLeft">
+      4)Que aplicaciones conforman tu proyecto?
+    </div>
+    <div class="rowLeft">
+      <md-input placeholder="Nombre" [(ngModel)]="appNombreInput" class='input'></md-input>
+    </div>
+    <div class="rowLeft">
+      <multi-select #tecs class="input"></multi-select>
+    </div>
+    <div class="row">
+      <button md-mini-fab (click)="addApp(tecs)" color="primary">
+          <md-icon class="md-24">add</md-icon>
+      </button>
+    </div>
+
+    <div class="rowLeft input">
+      <md-list class="input">
+        <md-divider></md-divider>
+        <span  *ngFor="let app of apps">
+          <md-list-item>
+            <button md-mini-fab md-list-avatar (click)="removeApp(app.nombre)" color="warn">
+              <md-icon class="md-24">delete</md-icon>
+            </button>
+            <h3 md-line> {{app.nombre}} </h3>
+            <p md-line> {{app.tecnologias}} </p>
+          </md-list-item>
+          <md-divider></md-divider>
+        </span>
+      </md-list>
+    </div>
+  </div>
+
+<div class='modal container' [(ngClass)]="dateFrom">
+  <div class="content">
+  <md-card style="padding: 0;">
+    <calendario (pick)='setFromDateValue($event)'></calendario>
+    <div class="rowEnd">
+      <button md-raised-button color="warn" (click)="closeFrom()">Cancelar</button>
+    </div>
+  </md-card>
+  </div>
+</div>
+
+<div class='modal container' [(ngClass)]="dateTo">
+  <div class="content">
+    <md-card style="padding: 0;">
+      <calendario (pick)='setToDateValue($event)'></calendario>
+      <div  class="rowEnd">
+        <button md-raised-button color="warn" (click)="closeTo()">Cancelar</button>
+      </div>
+    </md-card>
+  </div>
+</div>
